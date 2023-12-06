@@ -11,9 +11,9 @@ void setup() {
 fullScreen();
 //Display algorithm
 minim = new Minim(this);
- String groove = "Groove.mp3";
+ String groove = "groove.mp3";
   String extension = ".mp3";
-  String pathway = "MusicDownload/"; //Relative Path
+  String pathway = "MusicDownload/Groove_files/"; //Relative Path
   String path = sketchPath( pathway + groove ); //Absolute Path
 println(path);
 song1 = minim.loadFile( path );
