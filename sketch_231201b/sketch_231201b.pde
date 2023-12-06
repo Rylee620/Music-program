@@ -4,7 +4,6 @@ import ddf.minim.effects.*;
 import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
-//Global Variables
 Minim minim;
 AudioPlayer song1;
 //
@@ -14,7 +13,7 @@ fullScreen();
 minim = new Minim(this);
  String groove = "Groove.mp3";
   String extension = ".mp3";
-  String pathway = "MusicDownload/Groove_files/"; //Relative Path
+  String pathway = "MusicDownload/"; //Relative Path
   String path = sketchPath( pathway + groove ); //Absolute Path
 println(path);
 song1 = minim.loadFile( path );
@@ -22,7 +21,7 @@ song1 = minim.loadFile( path );
 }
 //
 void draw() {
-if ( song1.isLooping() && song1.loopCount()!=-1) println("there are", song1.loopCount(), "loops left.");
+if ( song1.isLooping() && song1.loopCount()!=-1 ) println("There are", song1.loopCount(), "loops left.");
 if ( song1.isLooping() && song1.loopCount()==-1) println("Looping Infinitely");
 if ( song1.isPlaying() && !song1.isLooping()) println("Play Once");
 //
@@ -34,7 +33,7 @@ void keyPressed() {
   println(key);
   if (key>='1' || key<='9' ) {
     String keystr = String.valueOf(key);
-    //println(keystr);
+    println(keystr);
   int loopNum = int(keystr);
   song1.loop(loopNum);
   }
