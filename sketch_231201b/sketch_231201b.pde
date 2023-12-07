@@ -57,7 +57,22 @@ void keyPressed() {
 
   if(key=='F' || key=='f') song1.skip(0);
   if(key=='R' || key=='r') song1.skip(-1000);
-}
+  //Stop button, ask is .playing(), & .pause() & .rewind(), or .rewind() 
+  if (key=='S' || key=='s' ) {
+   if ( song1.isPlaying()) {
+   song1.pause(); //auto, rewind()
+   } else {
+     song1.rewind(); 
+  }
+  }
+  if  (key=='Y' || key=='y') {
+    if ( song1.isPlaying()==true ) {
+   song1.pause(); 
+   } else { 
+     song1.play(); //ERROR, doesn't play
+   }
+  }
+}//End keyPressed
 //
 void mousePressed() {
 if  (mouseX> xRect && mouseX<xRect+rectWidth && mouseY>yRect && mouseY<yRect+rectHeight) song1.loop();
