@@ -38,6 +38,9 @@ void draw() {
 if ( song1.isLooping() && song1.loopCount()!=-1 ) println("There are", song1.loopCount(), "loops left.");
 if ( song1.isLooping() && song1.loopCount()==-1) println("Looping Infinitely");
 if ( song1.isPlaying() && !song1.isLooping()) println("Play Once");
+if ( song2.isLooping() && song2.loopCount()!=-1 ) println("There are", song2.loopCount(), "loops left.");
+if ( song2.isLooping() && song2.loopCount()==-1) println("Looping Infinitely");
+if ( song2.isPlaying() && !song2.isLooping()) println("Play Once");
 //
 println( "Song Position", song1.position(), "Song Length", song1.length() );
 }
