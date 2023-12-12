@@ -25,3 +25,12 @@ textFont(generalFont, size);
 text( songMetaData3.title(), xRect3, yRect3, rectWidth, rectHeight );
 fill(255);
 }
+void cyclesText(){
+ rect( xRect4, yRect4, rectWidth, rectHeight);
+ fill(Black);
+ textAlign(CENTER, CENTER);
+ int size = 45;
+ textFont (generalFont, size);
+ text( songMetaData4.title(), xRect4, yRect4, rectWidth, rectHeight);
+ fill(255);
+}

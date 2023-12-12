@@ -5,10 +5,10 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 int appWidth, appHeight;
-float xRect, yRect, xRect2, yRect2, xRect3, yRect3, rectWidth, rectHeight;
+float xRect, yRect, xRect2, yRect2, xRect3, yRect3, xRect4, yRect4, rectWidth, rectHeight;
 Minim minim;
-AudioPlayer song1, song2, song3;
-AudioMetaData songMetaData1, songMetaData2, songMetaData3; 
+AudioPlayer song1, song2, song3, song4;
+AudioMetaData songMetaData1, songMetaData2, songMetaData3, songMetaData4; 
 PFont generalFont;
 //
 void setup() {
@@ -22,11 +22,13 @@ minim = new Minim(this);
  String groove = "groove.mp3";
  String eureka = "Eureka.mp3";
  String simplest = "The_Simplest.mp3";
+ String cycles = "Cycles.mp3";
   String extension = ".mp3";
   String pathway = "MusicDownload/Groove_files/"; //Relative Path
   String path = sketchPath( pathway + groove ); //Absolute Path
   String path2 = sketchPath( pathway + eureka );
   String path3 = sketchPath( pathway + simplest );
+  String path4 = sketchPath( pathway + cycles );
 println(path);
 song1 = minim.loadFile( path );
 songMetaData1 = song1.getMetaData();
@@ -94,6 +96,28 @@ println("Lyrics", songMetaData3.lyrics() );
 println("Track", songMetaData3.track() );
 println("Genre", songMetaData3.genre() );
 println("Encoded", songMetaData3.encoded() );
+//
+println(path);
+song4 = minim.loadFile( path4 );
+songMetaData4 = song4.getMetaData();
+println("File Name", songMetaData4.fileName() ); //Data correct, verified
+println("Song Length (in milliseconds", songMetaData4.length() );
+println("Song Length (in seconds", songMetaData4.length()/1000 );
+ println("Song Length (in minutes & seconds)", songMetaData4.length()/1000/60, "minutes", ( songMetaData4.length()/1000 - ( songMetaData4.length()/1000/60)*60 ), "seconds" ); 
+println("Song Title", songMetaData4.title() );
+println("Author", songMetaData4.author() );
+println("Composer", songMetaData4.composer() );
+println("Orchestra", songMetaData4.orchestra() );
+println("Album", songMetaData4.album() );
+println("Disc", songMetaData4.disc() );
+println("Publisher", songMetaData4.publisher() );
+println("Date Released", songMetaData4.date() );
+println("Copyright", songMetaData4.copyright() );
+println("Comments", songMetaData4.comment() );
+println("Lyrics", songMetaData4.lyrics() );
+println("Track", songMetaData4.track() );
+println("Genre", songMetaData4.genre() );
+println("Encoded", songMetaData4.encoded() );
 //song1.loop(0);
 xRect = appWidth*1/10;
 yRect = appHeight*1/3;
@@ -103,6 +127,8 @@ xRect2 = xRect;
 yRect2 = yRect*1/3;
 xRect3 = xRect;
 yRect3 = yRect*5/3;
+xRect4 = xRect;
+yRect4 = yRect*7/3;
 }
 //
 void draw() {
@@ -163,4 +189,5 @@ if  (mouseX> xRect && mouseX<xRect+rectWidth && mouseY>yRect && mouseY<yRect+rec
 if  (mouseX> xRect1 && mouseX<xRect1+rectWidth1 && mouseY>yRect1 && mouseY<yRect1+rectHeight1) homeScreen();
 if  (mouseX> xRect2 && mouseX<xRect2+rectWidth && mouseY>yRect2 && mouseY<yRect2+rectHeight) song2.loop();
 if  (mouseX> xRect3 && mouseX<xRect3+rectWidth && mouseY>yRect3 && mouseY<yRect3+rectHeight) song3.loop();
+if  (mouseX> xRect4 && mouseX<xRect4+rectWidth && mouseY>yRect4 && mouseY<yRect4+rectHeight) song4.loop();
 }
