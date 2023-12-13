@@ -5,4 +5,5 @@ grooveText();
 eurekaText();
 simplestText();
 cyclesText();
+ghostText();
 }

@@ -8,7 +8,7 @@ fill(Black);
 textAlign (CENTER, CENTER);
 int size = 45;
 textFont(generalFont, size);
-text(songMetaData1.title(), xRect, yRect, rectWidth, rectHeight );
+text(songMetaData[0].title(), xRect, yRect, rectWidth, rectHeight );
 fill(255);
 }
 void eurekaText(){
@@ -20,7 +20,7 @@ fill(Black);
 textAlign (CENTER, CENTER);
 int size = 45;
 textFont(generalFont, size);
-text(songMetaData2.title(), xRect2, yRect2, rectWidth, rectHeight );
+text(songMetaData[1].title(), xRect2, yRect2, rectWidth, rectHeight );
 fill(255);
 }
 void simplestText(){
@@ -29,7 +29,7 @@ fill(Black);
 textAlign(CENTER, CENTER);
 int size = 45;
 textFont(generalFont, size);
-text( songMetaData3.title(), xRect3, yRect3, rectWidth, rectHeight );
+text( songMetaData[2].title(), xRect3, yRect3, rectWidth, rectHeight );
 fill(255);
 }
 void cyclesText(){
@@ -38,6 +38,15 @@ void cyclesText(){
  textAlign(CENTER, CENTER);
  int size = 45;
  textFont (generalFont, size);
- text( songMetaData4.title(), xRect4, yRect4, rectWidth, rectHeight);
+ text( songMetaData[3].title(), xRect4, yRect4, rectWidth, rectHeight);
  fill(255);
+}
+void ghostText(){
+rect( xRect5, yRect5, rectWidth, rectHeight);
+fill(Black);
+textAlign(CENTER, CENTER);
+int size = 45; 
+textFont (generalFont, size);
+text(songMetaData[3].title(), xRect5, yRect5, rectWidth, rectHeight);
+fill(255);
 }
