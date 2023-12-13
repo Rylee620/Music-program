@@ -5,9 +5,9 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 int appWidth, appHeight;
-float xRect, yRect, xRect2, yRect2, xRect3, yRect3, xRect4, yRect4, xRect5, yRect5, rectWidth, rectHeight;
+float xRect, yRect, xRect2, yRect2, xRect3, yRect3, xRect4, yRect4, xRect5, yRect5, xRect6, yRect6, rectWidth, rectHeight;
 Minim minim;
-int numberOfSongs = 5; 
+int numberOfSongs = 6; 
 int numberOfSounds = 1; 
 AudioPlayer[] song = new AudioPlayer [numberOfSongs];
 AudioPlayer[] soundEffect = new AudioPlayer [numberOfSounds];
@@ -27,6 +27,7 @@ minim = new Minim(this);
  String simplest = "The_Simplest.mp3";
  String cycles = "Cycles.mp3";
  String ghost = "Ghost_Walk.mp3";
+ String newsroom = "Newsroom.mp3";
   String extension = ".mp3";
   String pathway = "MusicDownload/Groove_files/"; //Relative Path
   String path = sketchPath( pathway + groove ); //Absolute Path
@@ -34,6 +35,7 @@ minim = new Minim(this);
   String path3 = sketchPath( pathway + simplest );
   String path4 = sketchPath( pathway + cycles );
   String path5 = sketchPath( pathway + ghost );
+  String path6 = sketchPath( pathway + newsroom );
 println(path);
 song[0] = minim.loadFile( path );
 songMetaData[0] = song[0].getMetaData();
@@ -145,6 +147,28 @@ println("Lyrics", songMetaData[4].lyrics() );
 println("Track", songMetaData[4].track() );
 println("Genre", songMetaData[4].genre() );
 println("Encoded", songMetaData[4].encoded() );
+//
+println(path);
+song[5] = minim.loadFile( path6 );
+songMetaData[5] = song[5].getMetaData();
+println("File Name", songMetaData[5].fileName() ); //Data correct, verified
+println("Song Length (in milliseconds", songMetaData[5].length() );
+println("Song Length (in seconds", songMetaData[5].length()/1000 );
+ println("Song Length (in minutes & seconds)", songMetaData[5].length()/1000/60, "minutes", ( songMetaData[5].length()/1000 - ( songMetaData[5].length()/1000/60)*60 ), "seconds" ); 
+println("Song Title", songMetaData[5].title() );
+println("Author", songMetaData[5].author() );
+println("Composer", songMetaData[5].composer() );
+println("Orchestra", songMetaData[5].orchestra() );
+println("Album", songMetaData[5].album() );
+println("Disc", songMetaData[5].disc() );
+println("Publisher", songMetaData[5].publisher() );
+println("Date Released", songMetaData[5].date() );
+println("Copyright", songMetaData[5].copyright() );
+println("Comments", songMetaData[5].comment() );
+println("Lyrics", songMetaData[5].lyrics() );
+println("Track", songMetaData[5].track() );
+println("Genre", songMetaData[5].genre() );
+println("Encoded", songMetaData[5].encoded() );
 //song1.loop(0);
 xRect = appWidth*1/10;
 yRect = appHeight*1/3;
@@ -158,6 +182,8 @@ xRect4 = xRect;
 yRect4 = yRect*7/3;
 xRect5 = xRect*12/3;
 yRect5 = yRect;
+xRect6 = xRect5;
+yRect6 = yRect2;
 }
 //
 void draw() {
@@ -176,6 +202,9 @@ if ( song[3].isPlaying() && !song[3].isLooping()) println("Play Once");
 if ( song[4].isLooping() && song[4].loopCount()!=-1 ) println("There are", song[4].loopCount(), "loops left.");
 if ( song[4].isLooping() && song[4].loopCount()==-1) println("Looping Infinitely");
 if ( song[4].isPlaying() && !song[4].isLooping()) println("Play Once");
+if ( song[5].isLooping() && song[5].loopCount()!=-1 ) println("There are", song[5].loopCount(), "loops left.");
+if ( song[5].isLooping() && song[5].loopCount()==-1) println("Looping Infinitely");
+if ( song[5].isPlaying() && !song[5].isLooping()) println("Play Once");
 //
 //songMetaData1.title()
 
@@ -226,4 +255,5 @@ if  (mouseX> xRect2 && mouseX<xRect2+rectWidth && mouseY>yRect2 && mouseY<yRect2
 if  (mouseX> xRect3 && mouseX<xRect3+rectWidth && mouseY>yRect3 && mouseY<yRect3+rectHeight) song[2].loop();
 if  (mouseX> xRect4 && mouseX<xRect4+rectWidth && mouseY>yRect4 && mouseY<yRect4+rectHeight) song[3].loop();
 if  (mouseX> xRect5 && mouseX<xRect5+rectWidth && mouseY>yRect5 && mouseY<yRect5+rectHeight) song[4].loop();
+if  (mouseX> xRect6 && mouseX<xRect6+rectWidth && mouseY>yRect6 && mouseY<yRect6+rectHeight) song[5].loop();
 }

@@ -47,6 +47,15 @@ fill(Black);
 textAlign(CENTER, CENTER);
 int size = 45; 
 textFont (generalFont, size);
-text(songMetaData[3].title(), xRect5, yRect5, rectWidth, rectHeight);
+text(songMetaData[4].title(), xRect5, yRect5, rectWidth, rectHeight);
+fill(255);
+}
+void newsText(){
+rect( xRect6, yRect6, rectWidth, rectHeight );
+fill(Black);
+textAlign(CENTER, CENTER);
+int size = 45;
+textFont (generalFont, size);
+text(songMetaData[5].title(), xRect6, yRect6, rectWidth, rectHeight );
 fill(255);
 }

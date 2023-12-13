@@ -5,10 +5,10 @@ String playlist = ("Playlist");
 int size = 45;
 void Splash_Screen() {
 background(255);
-xRect1 = appWidth*1/3;
+xRect1 = appWidth*2/3;
 yRect1 = appHeight*1/4;
-rectWidth1 = appWidth*2/5;
-rectHeight1 = appHeight*3/5;
+rectWidth1 = appWidth*1/5;
+rectHeight1 = appHeight*2/5;
 fill(Yellow);
 rect( xRect1, yRect1, rectWidth1, rectHeight1);
 fill(White);

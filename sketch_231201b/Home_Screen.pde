@@ -6,4 +6,5 @@ eurekaText();
 simplestText();
 cyclesText();
 ghostText();
+newsText();
 }
