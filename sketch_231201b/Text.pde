@@ -1,5 +1,9 @@
+color Green = #48FF7A, Orange =#EA7B02;
 void grooveText() {
+fill(Green);
 rect( xRect, yRect, rectWidth, rectHeight );
+fill(White);
+//
 fill(Black);
 textAlign (CENTER, CENTER);
 int size = 45;
@@ -8,7 +12,10 @@ text(songMetaData1.title(), xRect, yRect, rectWidth, rectHeight );
 fill(255);
 }
 void eurekaText(){
+fill(Orange);
 rect( xRect2, yRect2, rectWidth, rectHeight );
+fill(White);
+//
 fill(Black);
 textAlign (CENTER, CENTER);
 int size = 45;

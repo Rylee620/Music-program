@@ -7,7 +7,9 @@ import ddf.minim.ugens.*;
 int appWidth, appHeight;
 float xRect, yRect, xRect2, yRect2, xRect3, yRect3, xRect4, yRect4, rectWidth, rectHeight;
 Minim minim;
-AudioPlayer song1, song2, song3, song4;
+int numberOfSongs = 4; //Number of files in folder
+AudioPlayer[] song = new AudioPlayer [numberOfSongs];
+AudioPlayer soundEffect1;
 AudioMetaData songMetaData1, songMetaData2, songMetaData3, songMetaData4; 
 PFont generalFont;
 //
