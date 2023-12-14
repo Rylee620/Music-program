@@ -5,7 +5,7 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 int appWidth, appHeight;
-float xRect, yRect;
+float xRect1, yRect1;
 float xRect2, yRect2;
 float xRect3, yRect3;
 float xRect4, yRect4;
@@ -225,18 +225,18 @@ println("Track", songMetaData[7].track() );
 println("Genre", songMetaData[7].genre() );
 println("Encoded", songMetaData[7].encoded() );
 //song1.loop(0);
-xRect = appWidth*1/10;
-yRect = appHeight*1/3;
+xRect1 = appWidth*1/10;
+yRect1 = appHeight*1/3;
 rectWidth = appWidth*1/6;
 rectHeight = appHeight*1/6;
-xRect2 = xRect;
-yRect2 = yRect*1/3;
-xRect3 = xRect;
-yRect3 = yRect*5/3;
-xRect4 = xRect;
-yRect4 = yRect*7/3;
-xRect5 = xRect*12/3;
-yRect5 = yRect;
+xRect2 = xRect1;
+yRect2 = yRect1*1/3;
+xRect3 = xRect1;
+yRect3 = yRect1*5/3;
+xRect4 = xRect1;
+yRect4 = yRect1*7/3;
+xRect5 = xRect1*12/3;
+yRect5 = yRect1;
 xRect6 = xRect5;
 yRect6 = yRect2;
 xRect7 = xRect5;
@@ -314,8 +314,8 @@ void keyPressed() {
 }//End keyPressed
 //
 void mousePressed() {
-if  (mouseX> xRect && mouseX<xRect+rectWidth && mouseY>yRect && mouseY<yRect+rectHeight) song[0].loop();
-if  (mouseX> xRect1 && mouseX<xRect1+rectWidth1 && mouseY>yRect1 && mouseY<yRect1+rectHeight1) homeScreen();
+if  (mouseX> xRect1 && mouseX<xRect1+rectWidth && mouseY>yRect && mouseY<yRect1+rectHeight) song[0].loop();
+if  (mouseX> xRect && mouseX<xRect+rectWidth1 && mouseY>yRect && mouseY<yRect+rectHeight1) homeScreen();
 if  (mouseX> xRect2 && mouseX<xRect2+rectWidth && mouseY>yRect2 && mouseY<yRect2+rectHeight) song[1].loop();
 if  (mouseX> xRect3 && mouseX<xRect3+rectWidth && mouseY>yRect3 && mouseY<yRect3+rectHeight) song[2].loop();
 if  (mouseX> xRect4 && mouseX<xRect4+rectWidth && mouseY>yRect4 && mouseY<yRect4+rectHeight) song[3].loop();
