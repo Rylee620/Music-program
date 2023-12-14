@@ -7,4 +7,5 @@ simplestText();
 cyclesText();
 ghostText();
 newsText();
+competitionText();
 }

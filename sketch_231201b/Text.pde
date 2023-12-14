@@ -59,3 +59,12 @@ textFont (generalFont, size);
 text(songMetaData[5].title(), xRect6, yRect6, rectWidth, rectHeight );
 fill(255);
 }
+void competitionText(){
+rect( xRect7, yRect7, rectWidth, rectHeight);
+fill(Black);
+textAlign(CENTER, CENTER);
+int size = 45;
+textFont (generalFont, size);
+text( songMetaData[6].title(), xRect7, yRect7, rectWidth, rectHeight);
+fill(255);
+}
