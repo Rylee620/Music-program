@@ -5,9 +5,17 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 int appWidth, appHeight;
-float xRect, yRect, xRect2, yRect2, xRect3, yRect3, xRect4, yRect4, xRect5, yRect5, xRect6, yRect6, xRect7, yRect7, rectWidth, rectHeight;
+float xRect, yRect;
+float xRect2, yRect2;
+float xRect3, yRect3;
+float xRect4, yRect4;
+float xRect5, yRect5;
+float xRect6, yRect6;
+float xRect7, yRect7;
+float xRect8, yRect8;
+float rectWidth, rectHeight;
 Minim minim;
-int numberOfSongs = 7; 
+int numberOfSongs = 8; 
 int numberOfSounds = 1; 
 AudioPlayer[] song = new AudioPlayer [numberOfSongs];
 AudioPlayer[] soundEffect = new AudioPlayer [numberOfSounds];
@@ -29,6 +37,7 @@ minim = new Minim(this);
  String ghost = "Ghost_Walk.mp3";
  String newsroom = "Newsroom.mp3";
  String competition = "Competition.mp3";
+ String engine = "Engines.mp3";
   String extension = ".mp3";
   String pathway = "MusicDownload/Groove_files/"; //Relative Path
   String path = sketchPath( pathway + groove ); //Absolute Path
@@ -38,6 +47,7 @@ minim = new Minim(this);
   String path5 = sketchPath( pathway + ghost );
   String path6 = sketchPath( pathway + newsroom );
   String path7 = sketchPath( pathway + competition);
+  String path8 = sketchPath( pathway + engine);
 println(path);
 song[0] = minim.loadFile( path );
 songMetaData[0] = song[0].getMetaData();
@@ -193,6 +203,28 @@ println("Lyrics", songMetaData[6].lyrics() );
 println("Track", songMetaData[6].track() );
 println("Genre", songMetaData[6].genre() );
 println("Encoded", songMetaData[6].encoded() );
+//
+println(path);
+song[7] = minim.loadFile( path8 );
+songMetaData[7] = song[7].getMetaData();
+println("File Name", songMetaData[7].fileName() ); //Data correct, verified
+println("Song Length (in milliseconds", songMetaData[7].length() );
+println("Song Length (in seconds", songMetaData[7].length()/1000 );
+ println("Song Length (in minutes & seconds)", songMetaData[7].length()/1000/60, "minutes", ( songMetaData[7].length()/1000 - ( songMetaData[7].length()/1000/60)*60 ), "seconds" ); 
+println("Song Title", songMetaData[7].title() );
+println("Author", songMetaData[7].author() );
+println("Composer", songMetaData[7].composer() );
+println("Orchestra", songMetaData[7].orchestra() );
+println("Album", songMetaData[7].album() );
+println("Disc", songMetaData[7].disc() );
+println("Publisher", songMetaData[7].publisher() );
+println("Date Released", songMetaData[7].date() );
+println("Copyright", songMetaData[7].copyright() );
+println("Comments", songMetaData[7].comment() );
+println("Lyrics", songMetaData[7].lyrics() );
+println("Track", songMetaData[7].track() );
+println("Genre", songMetaData[7].genre() );
+println("Encoded", songMetaData[7].encoded() );
 //song1.loop(0);
 xRect = appWidth*1/10;
 yRect = appHeight*1/3;
@@ -210,6 +242,8 @@ xRect6 = xRect5;
 yRect6 = yRect2;
 xRect7 = xRect5;
 yRect7 = yRect3;
+xRect8 = xRect5;
+yRect8 = yRect4;
 }
 //
 void draw() {
@@ -234,6 +268,9 @@ if ( song[5].isPlaying() && !song[5].isLooping()) println("Play Once");
 if ( song[6].isLooping() && song[6].loopCount()!=-1 ) println("There are", song[6].loopCount(), "loops left.");
 if ( song[6].isLooping() && song[6].loopCount()==-1) println("Looping Infinitely");
 if ( song[6].isPlaying() && !song[6].isLooping()) println("Play Once");
+if ( song[7].isLooping() && song[7].loopCount()!=-1 ) println("There are", song[7].loopCount(), "loops left.");
+if ( song[7].isLooping() && song[7].loopCount()==-1) println("Looping Infinitely");
+if ( song[7].isPlaying() && !song[7].isLooping()) println("Play Once");
 //
 //songMetaData1.title()
 
@@ -286,4 +323,5 @@ if  (mouseX> xRect4 && mouseX<xRect4+rectWidth && mouseY>yRect4 && mouseY<yRect4
 if  (mouseX> xRect5 && mouseX<xRect5+rectWidth && mouseY>yRect5 && mouseY<yRect5+rectHeight) song[4].loop();
 if  (mouseX> xRect6 && mouseX<xRect6+rectWidth && mouseY>yRect6 && mouseY<yRect6+rectHeight) song[5].loop();
 if  (mouseX> xRect7 && mouseX<xRect7+rectWidth && mouseY>yRect7 && mouseY<yRect7+rectHeight) song[6].loop();
+if  (mouseX> xRect8 && mouseX<xRect8+rectWidth && mouseY>yRect8 && mouseY<yRect8+rectHeight) song[7].loop();
 }
