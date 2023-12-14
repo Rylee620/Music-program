@@ -38,16 +38,16 @@ minim = new Minim(this);
  String newsroom = "Newsroom.mp3";
  String competition = "Competition.mp3";
  String engine = "Engines.mp3";
-  String extension = ".mp3";
-  String pathway = "MusicDownload/Groove_files/"; //Relative Path
-  String path = sketchPath( pathway + groove ); //Absolute Path
-  String path2 = sketchPath( pathway + eureka );
-  String path3 = sketchPath( pathway + simplest );
-  String path4 = sketchPath( pathway + cycles );
-  String path5 = sketchPath( pathway + ghost );
-  String path6 = sketchPath( pathway + newsroom );
-  String path7 = sketchPath( pathway + competition);
-  String path8 = sketchPath( pathway + engine);
+ String extension = ".mp3";
+ String pathway = "MusicDownload/Groove_files/"; //Relative Path
+ String path = sketchPath( pathway + groove ); //Absolute Path
+ String path2 = sketchPath( pathway + eureka );
+ String path3 = sketchPath( pathway + simplest );
+ String path4 = sketchPath( pathway + cycles );
+ String path5 = sketchPath( pathway + ghost );
+ String path6 = sketchPath( pathway + newsroom );
+ String path7 = sketchPath( pathway + competition);
+ String path8 = sketchPath( pathway + engine);
 println(path);
 song[0] = minim.loadFile( path );
 songMetaData[0] = song[0].getMetaData();
@@ -55,8 +55,7 @@ generalFont = createFont("Candara", 45);
 //println("?", songMetaData1,?() );
 println("File Name", songMetaData[0].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[0].length() );
-println("Song Length (in seconds", songMetaData[0].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[0].length()/1000/60, "minutes", ( songMetaData[0].length()/1000 - ( songMetaData[0].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in seconds", songMetaData[0].length()/1000 ); println("Song Length (in minutes & seconds)", songMetaData[0].length()/1000/60, "minutes", ( songMetaData[0].length()/1000 - ( songMetaData[0].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[0].title() );
 println("Author", songMetaData[0].author() );
 println("Composer", songMetaData[0].composer() );
@@ -78,7 +77,7 @@ songMetaData[1] =song[1].getMetaData();
 println("File Name", songMetaData[1].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[1].length() );
 println("Song Length (in seconds", songMetaData[1].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[1].length()/1000/60, "minutes", ( songMetaData[1].length()/1000 - ( songMetaData[1].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in minutes & seconds)", songMetaData[1].length()/1000/60, "minutes", ( songMetaData[1].length()/1000 - ( songMetaData[1].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[1].title() );
 println("Author", songMetaData[1].author() );
 println("Composer", songMetaData[1].composer() );
@@ -100,7 +99,7 @@ songMetaData[2] =song[2].getMetaData();
 println("File Name", songMetaData[2].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[2].length() );
 println("Song Length (in seconds", songMetaData[2].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[2].length()/1000/60, "minutes", ( songMetaData[2].length()/1000 - ( songMetaData[2].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in minutes & seconds)", songMetaData[2].length()/1000/60, "minutes", ( songMetaData[2].length()/1000 - ( songMetaData[2].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[2].title() );
 println("Author", songMetaData[2].author() );
 println("Composer", songMetaData[2].composer() );
@@ -122,7 +121,7 @@ songMetaData[3] = song[3].getMetaData();
 println("File Name", songMetaData[3].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[3].length() );
 println("Song Length (in seconds", songMetaData[3].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[3].length()/1000/60, "minutes", ( songMetaData[3].length()/1000 - ( songMetaData[3].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in minutes & seconds)", songMetaData[3].length()/1000/60, "minutes", ( songMetaData[3].length()/1000 - ( songMetaData[3].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[3].title() );
 println("Author", songMetaData[3].author() );
 println("Composer", songMetaData[3].composer() );
@@ -144,7 +143,7 @@ songMetaData[4] = song[4].getMetaData();
 println("File Name", songMetaData[4].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[4].length() );
 println("Song Length (in seconds", songMetaData[4].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[4].length()/1000/60, "minutes", ( songMetaData[4].length()/1000 - ( songMetaData[4].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in minutes & seconds)", songMetaData[4].length()/1000/60, "minutes", ( songMetaData[4].length()/1000 - ( songMetaData[4].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[4].title() );
 println("Author", songMetaData[4].author() );
 println("Composer", songMetaData[4].composer() );
@@ -166,7 +165,7 @@ songMetaData[5] = song[5].getMetaData();
 println("File Name", songMetaData[5].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[5].length() );
 println("Song Length (in seconds", songMetaData[5].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[5].length()/1000/60, "minutes", ( songMetaData[5].length()/1000 - ( songMetaData[5].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in minutes & seconds)", songMetaData[5].length()/1000/60, "minutes", ( songMetaData[5].length()/1000 - ( songMetaData[5].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[5].title() );
 println("Author", songMetaData[5].author() );
 println("Composer", songMetaData[5].composer() );
@@ -188,7 +187,7 @@ songMetaData[6] = song[6].getMetaData();
 println("File Name", songMetaData[6].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[6].length() );
 println("Song Length (in seconds", songMetaData[6].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[6].length()/1000/60, "minutes", ( songMetaData[6].length()/1000 - ( songMetaData[6].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in minutes & seconds)", songMetaData[6].length()/1000/60, "minutes", ( songMetaData[6].length()/1000 - ( songMetaData[6].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[6].title() );
 println("Author", songMetaData[6].author() );
 println("Composer", songMetaData[6].composer() );
@@ -210,7 +209,7 @@ songMetaData[7] = song[7].getMetaData();
 println("File Name", songMetaData[7].fileName() ); //Data correct, verified
 println("Song Length (in milliseconds", songMetaData[7].length() );
 println("Song Length (in seconds", songMetaData[7].length()/1000 );
- println("Song Length (in minutes & seconds)", songMetaData[7].length()/1000/60, "minutes", ( songMetaData[7].length()/1000 - ( songMetaData[7].length()/1000/60)*60 ), "seconds" ); 
+println("Song Length (in minutes & seconds)", songMetaData[7].length()/1000/60, "minutes", ( songMetaData[7].length()/1000 - ( songMetaData[7].length()/1000/60)*60 ), "seconds" ); 
 println("Song Title", songMetaData[7].title() );
 println("Author", songMetaData[7].author() );
 println("Composer", songMetaData[7].composer() );

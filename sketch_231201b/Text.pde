@@ -36,15 +36,14 @@ text( songMetaData[2].title(), xRect3, yRect3, rectWidth, rectHeight );
 fill(255);
 }
 void cyclesText(){
- fill(Magenta);
- rect( xRect4, yRect4, rectWidth, rectHeight);
- fill(White);
- fill(Black);
- textAlign(CENTER, CENTER);
- int size = 45;
- textFont (generalFont, size);
- text( songMetaData[3].title(), xRect4, yRect4, rectWidth, rectHeight);
- fill(255);
+fill(Magenta);
+rect( xRect4, yRect4, rectWidth, rectHeight);
+fill(White);
+fill(Black);
+textAlign(CENTER, CENTER);
+int size = 45; textFont (generalFont, size); 
+text( songMetaData[3].title(), xRect4, yRect4, rectWidth, rectHeight);
+fill(255);
 }
 void ghostText(){
 fill(Green);
