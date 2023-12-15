@@ -17,7 +17,7 @@ float xRect8, yRect8;
 float rectWidth, rectHeight;
 Minim minim;
 int numberOfSongs = 8; 
-int numberOfSounds = 3; 
+int numberOfSounds = 4; 
 AudioPlayer[] song = new AudioPlayer [numberOfSongs];
 AudioPlayer[] soundEffect = new AudioPlayer [numberOfSounds];
 AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs]; 

@@ -4,7 +4,7 @@ PFont Candara;
 String playlist = ("Playlist");
 int size = 45;
 void Splash_Screen() {
-background(255);
+background(Black);
 xRect = appWidth*2/3;
 yRect = appHeight*1/4;
 rectWidth1 = appWidth*1/5;

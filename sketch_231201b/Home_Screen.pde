@@ -1,6 +1,6 @@
-
+color Blue = #001D5A;
 void homeScreen(){
-background(255);
+background(Blue);
 grooveText();
 eurekaText();
 simplestText();
