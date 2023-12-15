@@ -1,3 +1,4 @@
+
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -16,10 +17,10 @@ float xRect8, yRect8;
 float rectWidth, rectHeight;
 Minim minim;
 int numberOfSongs = 8; 
-int numberOfSounds = 1; 
+int numberOfSounds = 3; 
 AudioPlayer[] song = new AudioPlayer [numberOfSongs];
 AudioPlayer[] soundEffect = new AudioPlayer [numberOfSounds];
-AudioMetaData[] songMetaData = new AudioMetaData [numberOfSongs]; 
+AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs]; 
 PFont generalFont;
 //
 void setup() {
@@ -314,8 +315,8 @@ void keyPressed() {
 }//End keyPressed
 //
 void mousePressed() {
-if  (mouseX> xRect1 && mouseX<xRect1+rectWidth && mouseY>yRect && mouseY<yRect1+rectHeight) song[0].loop();
 if  (mouseX> xRect && mouseX<xRect+rectWidth1 && mouseY>yRect && mouseY<yRect+rectHeight1) homeScreen();
+if  (mouseX> xRect1 && mouseX<xRect1+rectWidth && mouseY>yRect1 && mouseY<yRect1+rectHeight) song[0].loop();
 if  (mouseX> xRect2 && mouseX<xRect2+rectWidth && mouseY>yRect2 && mouseY<yRect2+rectHeight) song[1].loop();
 if  (mouseX> xRect3 && mouseX<xRect3+rectWidth && mouseY>yRect3 && mouseY<yRect3+rectHeight) song[2].loop();
 if  (mouseX> xRect4 && mouseX<xRect4+rectWidth && mouseY>yRect4 && mouseY<yRect4+rectHeight) song[3].loop();

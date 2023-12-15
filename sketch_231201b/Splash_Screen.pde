@@ -19,7 +19,7 @@ textAlign(CENTER, CENTER);
 size = 45;
 textFont(Candara, size);
 fill(Black);
-text( playlist, xRect1, yRect1, rectWidth1, rectHeight1);
+text( playlist, xRect, yRect, rectWidth1, rectHeight1);
 fill(White);
 
 }

@@ -1,14 +1,14 @@
 color Green = #48FF7A, Orange =#EA7B02, Cyan = #03B9FF, Magenta = #FF035F;
 void grooveText() {
 fill(Green);
-rect( xRect, yRect, rectWidth, rectHeight );
+rect( xRect1, yRect1, rectWidth, rectHeight );
 fill(White);
 //
 fill(Black);
 textAlign (CENTER, CENTER);
 int size = 45;
 textFont(generalFont, size);
-text(songMetaData[0].title(), xRect, yRect, rectWidth, rectHeight );
+text(songMetaData[0].title(), xRect1, yRect1, rectWidth, rectHeight );
 fill(255);
 }
 void eurekaText(){
