@@ -9,4 +9,5 @@ ghostText();
 newsText();
 competitionText();
 engineText();
+currentSongText();
 }

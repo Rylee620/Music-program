@@ -14,6 +14,7 @@ float xRect6, yRect6;
 float xRect7, yRect7;
 float xRect8, yRect8;
 float rectWidth, rectHeight;
+float xRectA, yRectA, rectWidth2, rectHeight2;
 Minim minim;
 int numberOfSongs = 8; 
 int numberOfSounds = 4; 
@@ -244,6 +245,10 @@ xRect7 = xRect5;
 yRect7 = yRect3;
 xRect8 = xRect5;
 yRect8 = yRect4;
+xRectA = xRect;
+yRectA = yRect1;
+rectWidth2 = rectWidth1;
+rectHeight2 = appHeight*1/5;
 }
 //
 void draw() {

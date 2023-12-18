@@ -93,3 +93,13 @@ textFont (generalFont, size);
 text( songMetaData[7].title(), xRect8, yRect8, rectWidth, rectHeight);
 fill(255);
 }
+void currentSongText(){
+rect(xRectA, yRectA, rectWidth2, rectHeight2); //mistake
+  fill(Black); //Ink
+  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  int size = 55; //Change this font size
+  textFont(generalFont, size); //Change the number until it fits, largest font size
+  text(songMetaData[currentSong].title(), xRectA, yRectA, rectWidth2, rectHeight2);
+  fill(255);
+}
