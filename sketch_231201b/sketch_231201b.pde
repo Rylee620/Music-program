@@ -1,4 +1,3 @@
-
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -22,6 +21,7 @@ AudioPlayer[] song = new AudioPlayer [numberOfSongs];
 AudioPlayer[] soundEffect = new AudioPlayer [numberOfSounds];
 AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs]; 
 PFont generalFont;
+int currentSong = 0;
 //
 void setup() {
 fullScreen();
@@ -247,30 +247,9 @@ yRect8 = yRect4;
 }
 //
 void draw() {
-if ( song[0].isLooping() && song[0].loopCount()!=-1 ) println("There are", song[0].loopCount(), "loops left.");
-if ( song[0].isLooping() && song[0].loopCount()==-1) println("Looping Infinitely");
-if ( song[0].isPlaying() && !song[0].isLooping()) println("Play Once");
-if ( song[1].isLooping() && song[1].loopCount()!=-1 ) println("There are", song[1].loopCount(), "loops left.");
-if ( song[1].isLooping() && song[1].loopCount()==-1) println("Looping Infinitely");
-if ( song[1].isPlaying() && !song[1].isLooping()) println("Play Once");
-if ( song[2].isLooping() && song[2].loopCount()!=-1 ) println("There are", song[2].loopCount(), "loops left.");
-if ( song[2].isLooping() && song[2].loopCount()==-1) println("Looping Infinitely");
-if ( song[2].isPlaying() && !song[2].isLooping()) println("Play Once");
-if ( song[3].isLooping() && song[3].loopCount()!=-1 ) println("There are", song[3].loopCount(), "loops left.");
-if ( song[3].isLooping() && song[3].loopCount()==-1) println("Looping Infinitely");
-if ( song[3].isPlaying() && !song[3].isLooping()) println("Play Once");
-if ( song[4].isLooping() && song[4].loopCount()!=-1 ) println("There are", song[4].loopCount(), "loops left.");
-if ( song[4].isLooping() && song[4].loopCount()==-1) println("Looping Infinitely");
-if ( song[4].isPlaying() && !song[4].isLooping()) println("Play Once");
-if ( song[5].isLooping() && song[5].loopCount()!=-1 ) println("There are", song[5].loopCount(), "loops left.");
-if ( song[5].isLooping() && song[5].loopCount()==-1) println("Looping Infinitely");
-if ( song[5].isPlaying() && !song[5].isLooping()) println("Play Once");
-if ( song[6].isLooping() && song[6].loopCount()!=-1 ) println("There are", song[6].loopCount(), "loops left.");
-if ( song[6].isLooping() && song[6].loopCount()==-1) println("Looping Infinitely");
-if ( song[6].isPlaying() && !song[6].isLooping()) println("Play Once");
-if ( song[7].isLooping() && song[7].loopCount()!=-1 ) println("There are", song[7].loopCount(), "loops left.");
-if ( song[7].isLooping() && song[7].loopCount()==-1) println("Looping Infinitely");
-if ( song[7].isPlaying() && !song[7].isLooping()) println("Play Once");
+if ( song[currentSong].isLooping() && song[currentSong].loopCount()!=-1 ) println("There are", song[currentSong].loopCount(), "loops left.");
+if ( song[currentSong].isLooping() && song[currentSong].loopCount()==-1) println("Looping Infinitely");
+if ( song[currentSong].isPlaying() && !song[currentSong].isLooping()) println("Play Once");
 //
 //songMetaData1.title()
 
@@ -278,38 +257,59 @@ if ( song[7].isPlaying() && !song[7].isLooping()) println("Play Once");
 }
 //
 void keyPressed() {
-  if (key=='P' || key=='p') song[0].play(); //Parameter is milliseconds
+   if ( key==CODED && keyCode==LEFT ) { //PREVIOUS
+    song[currentSong].pause();
+    if ( currentSong==0 ) {
+      currentSong = numberOfSongs-1; //End of PlayList
+      song[currentSong].play();
+    } else {
+      currentSong--;
+      song[currentSong].play();
+    }
+  } //End Previous
+  if ( key==CODED && keyCode==RIGHT ) { //NEXT
+    song[currentSong].pause();
+    if ( currentSong==numberOfSongs-1 ) {
+      currentSong = 0; //End of PlayList
+      song[currentSong].play();
+    } else {
+      currentSong++;
+      song[currentSong].play();
+    }
+  }
+  
+  if (key=='P' || key=='p') song[currentSong].play(); //Parameter is milliseconds
   println(key);
   if (key>='1' || key<='9' ) {
     String keystr = String.valueOf(key);
     println(keystr);
   int loopNum = int(keystr);
-  song[0].loop(loopNum);
+  song[currentSong].loop(loopNum);
   }
-  if ( key=='L' || key=='l') song[0].loop();
+  if ( key=='L' || key=='l') song[currentSong].loop();
   if (key =='M' || key=='m') { //Mute only stops the speakers, not the file
-  if (song[0].isMuted() ) {
-    song[0].unmute();
+  if (song[currentSong].isMuted() ) {
+    song[currentSong].unmute();
   } else {
-  song[0].mute();
+  song[currentSong].mute();
   }
   }
 
-  if(key=='F' || key=='f') song[0].skip(0);
-  if(key=='R' || key=='r') song[0].skip(-1000);
+  if(key=='F' || key=='f') song[currentSong].skip(0);
+  if(key=='R' || key=='r') song[currentSong].skip(-1000);
   //Stop button, ask is .playing(), & .pause() & .rewind(), or .rewind() 
   if (key=='S' || key=='s' ) {
-   if ( song[0].isPlaying()) {
-   song[0].pause(); //auto, rewind()
+   if ( song[currentSong].isPlaying()) {
+   song[currentSong].pause(); //auto, rewind()
    } else {
-     song[0].rewind(); 
+     song[currentSong].rewind(); 
   }
   }
   if  (key=='Y' || key=='y') {
-    if ( song[0].isPlaying()==true ) {
-   song[0].pause(); 
+    if ( song[currentSong].isPlaying()==true ) {
+   song[currentSong].pause(); 
    } else { 
-     song[0].play(); //ERROR, doesn't play
+     song[currentSong].play(); //ERROR, doesn't play
    }
   }
 }//End keyPressed
