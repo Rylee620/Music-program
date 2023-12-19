@@ -94,12 +94,47 @@ text( songMetaData[7].title(), xRect8, yRect8, rectWidth, rectHeight);
 fill(255);
 }
 void currentSongText(){
-rect(xRectA, yRectA, rectWidth2, rectHeight2); //mistake
+rect(xRectA, yRectA, rectWidth2, rectHeight2); 
   fill(Black); //Ink
-  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-  int size = 55; //Change this font size
-  textFont(generalFont, size); //Change the number until it fits, largest font size
+  textAlign (CENTER, CENTER); 
+  int size = 55; 
+  textFont(generalFont, size); 
   text(songMetaData[currentSong].title(), xRectA, yRectA, rectWidth2, rectHeight2);
   fill(255);
+}
+void carDoorText(){
+rect(xRectB, yRectB, rectWidth3, rectHeight3);
+fill(Black);
+textAlign (CENTER, CENTER);
+int size = 20;
+textFont(generalFont, size);
+text(soundMetaData[0].title(), xRectB, yRectB, rectWidth3, rectHeight3);
+fill(255);
+}
+void springAtticDoorText(){
+rect(xRectC, yRectC, rectWidth3, rectHeight3);
+fill(Black);
+textAlign (CENTER, CENTER);
+int size = 20;
+textFont(generalFont, size);
+text(soundMetaData[1].title(), xRectC, yRectC, rectWidth3, rectHeight3);
+fill(255);
+}
+void stingText(){
+rect(xRectD, yRectD, rectWidth3, rectHeight3);
+fill(Black);
+textAlign (CENTER, CENTER);
+int size = 20;
+textFont(generalFont, size);
+text(soundMetaData[2].title(), xRectD, yRectD, rectWidth3, rectHeight3);
+fill(255);
+}
+void woodText(){
+rect(xRectE, yRectE, rectWidth3, rectHeight3);
+fill(Black);
+textAlign (CENTER, CENTER);
+int size = 20;
+textFont(generalFont, size);
+text(soundMetaData[3].title(), xRectE, yRectE, rectWidth3, rectHeight3);
+fill(255);
 }
