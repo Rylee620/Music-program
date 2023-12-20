@@ -258,6 +258,9 @@ rectWidth2 = rectWidth1;
 rectHeight2 = appHeight*1/5;
 rectWidth3 = rectWidth*1/2;
 rectHeight3 = rectHeight*1/3;
+//
+currentSong = int (random(0, numberOfSongs-1));
+println("Random Start", currentSong);
 }
 //
 void draw() {
@@ -265,7 +268,17 @@ if ( song[currentSong].isLooping() && song[currentSong].loopCount()!=-1 ) printl
 if ( song[currentSong].isLooping() && song[currentSong].loopCount()==-1) println("Looping Infinitely");
 if ( song[currentSong].isPlaying() && !song[currentSong].isLooping()) println("Play Once");
 //
-//songMetaData1.title()
+//Autoplay
+if (song[currentSong].isPlaying()) {
+//empty if
+} else {
+  //current song is at the end of the file
+  song[currentSong].rewind();
+ currentSong = currentSong + 1;
+ song[currentSong].play();
+ //error, autoplay breaks stop button 
+ //error, autoplay will break at the end of the playlist
+}
 
 //println( "Song Position", song1.position(), "Song Length", song1.length() );
 }
