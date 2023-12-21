@@ -28,7 +28,7 @@ AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs];
 AudioMetaData[] soundMetaData = new AudioMetaData[numberOfSounds];
 PFont generalFont;
 int currentSong = 0;
-Boolean stopBoolean= false;
+Boolean stopBoolean= false, pauseBoolean=false;
 //
 void setup() {
 fullScreen();
@@ -277,11 +277,17 @@ if ( song[currentSong].isPlaying() ) {
     if ( stopBoolean == true ) {
       song[currentSong].pause();
     } else {
-       if ( song[currentSong].position() > song[currentSong].length()-song[currentSong].length()*0.9  ) {} else {}
-      song[currentSong].rewind();
+       if ( song[currentSong].position() > song[currentSong].length()-song[currentSong].length()*0.9  ) {
+       if (pauseBoolean==false) song[currentSong].rewind();
       currentSong = currentSong + 1; //currentSong++; currentSong+=1
-      song[currentSong].play();
-    }
+      song[currentSong].play();   
+    } else if (song[currentSong].position() > song[currentSong].length()-song[currentSong].length()*0.9) {
+    if (pauseBoolean==false) song[currentSong].rewind();    
+    }else {
+     if (pauseBoolean==false) song[currentSong].rewind();
+     if (pauseBoolean==false) song[currentSong].play();
+  }
+}
   }
 }
 //
@@ -304,11 +310,19 @@ void keyPressed() {
     } else {
       currentSong++;
       song[currentSong].play();
-    }
- 
+    } 
+  }  
+  if (key=='P' || key=='p') {
+    delay( sound[2].length());
+    if (song[currentSong].isPlaying()) {
+    if( pauseBoolean==false ) {
+      stopBoolean=true;
+    } else{
+   pauseBoolean=false;
   }
-  
-  if (key=='P' || key=='p') song[currentSong].play(); //Parameter is milliseconds
+    }
+  if ( pauseBoolean==true) {pauseBoolean=false;} else {pauseBoolean=true;}
+  }
   println(key);
   if (key>='1' || key<='9' ) {
     String keystr = String.valueOf(key);
@@ -336,13 +350,14 @@ void keyPressed() {
      stopBoolean = false;
      //song[currentSong].rewind(); 
   }
-  }
+ 
   if  (key=='Y' || key=='y') {
     if ( song[currentSong].isPlaying()==true ) {
    song[currentSong].pause(); 
    } else { 
      song[currentSong].play(); //ERROR, doesn't play
    }
+  }
   }
 }//End keyPressed
 //
