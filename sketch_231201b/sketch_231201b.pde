@@ -28,6 +28,7 @@ AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs];
 AudioMetaData[] soundMetaData = new AudioMetaData[numberOfSounds];
 PFont generalFont;
 int currentSong = 0;
+Boolean stopBoolean= false;
 //
 void setup() {
 fullScreen();
@@ -269,18 +270,19 @@ if ( song[currentSong].isLooping() && song[currentSong].loopCount()==-1) println
 if ( song[currentSong].isPlaying() && !song[currentSong].isLooping()) println("Play Once");
 //
 //Autoplay
-if (song[currentSong].isPlaying()) {
-//empty if
-} else {
-  //current song is at the end of the file
-  song[currentSong].rewind();
- currentSong = currentSong + 1;
- song[currentSong].play();
- //error, autoplay breaks stop button 
- //error, autoplay will break at the end of the playlist
-}
-
-//println( "Song Position", song1.position(), "Song Length", song1.length() );
+if ( song[currentSong].isPlaying() ) {
+    if ( stopBoolean == true ) song[currentSong].pause();
+  } else {
+    //currentSong at end of FILE
+    if ( stopBoolean == true ) {
+      song[currentSong].pause();
+    } else {
+       if ( song[currentSong].position() > song[currentSong].length()-song[currentSong].length()*0.9  ) {} else {}
+      song[currentSong].rewind();
+      currentSong = currentSong + 1; //currentSong++; currentSong+=1
+      song[currentSong].play();
+    }
+  }
 }
 //
 void keyPressed() {
@@ -328,9 +330,11 @@ void keyPressed() {
   //Stop button, ask is .playing(), & .pause() & .rewind(), or .rewind() 
   if (key=='S' || key=='s' ) {
    if ( song[currentSong].isPlaying()) {
-   song[currentSong].pause(); //auto, rewind()
+     stopBoolean = true;
+   //song[currentSong].pause(); //auto, rewind()
    } else {
-     song[currentSong].rewind(); 
+     stopBoolean = false;
+     //song[currentSong].rewind(); 
   }
   }
   if  (key=='Y' || key=='y') {
