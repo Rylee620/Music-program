@@ -21,5 +21,4 @@ textFont(Candara, size);
 fill(Black);
 text( playlist, xRect, yRect, rectWidth1, rectHeight1);
 fill(White);
-
 }

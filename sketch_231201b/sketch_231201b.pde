@@ -338,7 +338,6 @@ void keyPressed() {
   song[currentSong].mute();
   }
   }
-
   if(key=='F' || key=='f') song[currentSong].skip(0);
   if(key=='R' || key=='r') song[currentSong].skip(-1000);
   //Stop button, ask is .playing(), & .pause() & .rewind(), or .rewind() 
@@ -349,8 +348,7 @@ void keyPressed() {
    } else {
      stopBoolean = false;
      //song[currentSong].rewind(); 
-  }
- 
+  } 
   if  (key=='Y' || key=='y') {
     if ( song[currentSong].isPlaying()==true ) {
    song[currentSong].pause(); 
