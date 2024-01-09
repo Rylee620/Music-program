@@ -6,9 +6,9 @@ int size = 45;
 void Splash_Screen() {
 background(Black);
 xRect = appWidth*2/3;
-yRect = appHeight*1/4;
+yRect = appHeight*3/4;
 rectWidth1 = appWidth*1/5;
-rectHeight1 = appHeight*2/5;
+rectHeight1 = appHeight*1/5;
 fill(Yellow);
 rect( xRect, yRect, rectWidth1, rectHeight1);
 fill(White);

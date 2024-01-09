@@ -14,4 +14,6 @@ competitionText();
 woodText();
 engineText();
 currentSongText();
+nextText();
+previousText();
 }

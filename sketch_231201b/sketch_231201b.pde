@@ -19,6 +19,8 @@ float xRectB, yRectB, rectWidth3, rectHeight3;
 float xRectC, yRectC;
 float xRectD, yRectD;
 float xRectE, yRectE;
+float xRectF, yRectF, rectWidth4, rectHeight4;
+float xRectG, yRectG;
 Minim minim;
 int numberOfSongs = 8; 
 int numberOfSounds = 4; 
@@ -255,10 +257,16 @@ xRectD = xRectB;
 yRectD = yRectB*7.35/2;
 xRectE = xRectB;
 yRectE = yRectB*9.75/2;
+xRectF = xRectA*7/6;
+yRectF = yRectA*5/3;
+xRectG = xRectA*16/17;
+yRectG = yRectF;
 rectWidth2 = rectWidth1;
 rectHeight2 = appHeight*1/5;
 rectWidth3 = rectWidth*1/2;
 rectHeight3 = rectHeight*1/3;
+rectWidth4 = rectWidth*5/7;
+rectHeight4 = rectHeight3;
 //
 currentSong = int (random(0, numberOfSongs-1));
 println("Random Start", currentSong);
@@ -373,4 +381,26 @@ if  (mouseX> xRectB && mouseX<xRectB+rectWidth3 && mouseY>yRectB && mouseY<yRect
 if  (mouseX> xRectC && mouseX<xRectC+rectWidth3 && mouseY>yRectC && mouseY<yRectC+rectHeight3) sound[1].loop();
 if  (mouseX> xRectD && mouseX<xRectD+rectWidth3 && mouseY>yRectD && mouseY<yRectD+rectHeight3) sound[2].loop();
 if  (mouseX> xRectE && mouseX<xRectE+rectWidth3 && mouseY>yRectE && mouseY<yRectE+rectHeight3) sound[3].loop();
+if  (mouseX> xRectF && mouseX<xRectF+rectWidth4 && mouseY>yRectF && mouseY<yRectF+rectHeight4) {
+  song[currentSong].pause();
+  if ( currentSong==numberOfSongs-1 ) {
+      currentSong = 0; //End of PlayList
+      song[currentSong].play();
+    } else {
+      currentSong++;
+      song[currentSong].play();
+      currentSongText();
+    }
+}
+if (mouseX> xRectG && mouseX<xRectG+rectWidth4 && mouseY>yRectG && mouseY<yRectG+rectHeight4) {
+  song[currentSong].pause();
+    if ( currentSong==0 ) {
+      currentSong = numberOfSongs-1; //End of PlayList
+      song[currentSong].play();
+    } else {
+      currentSong--;
+      song[currentSong].play();
+      currentSongText();
+    }
+  }
 }
