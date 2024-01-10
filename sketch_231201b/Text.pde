@@ -1,5 +1,5 @@
 color Green = #48FF7A, Orange =#EA7B02, Cyan = #03B9FF, Magenta = #FF035F;
-String Next = ("Next->"), Previous = ("<-Previous");
+String Next = ("Next->"), Previous = ("<-Previous"), Stop = ("STOP");;
 void grooveText() {
 fill(Green);
 rect( xRect2, yRect2, rectWidth, rectHeight );
@@ -155,5 +155,14 @@ textAlign(CENTER, CENTER);
 int size = 25;
 textFont(generalFont, size);
 text(Previous, xRectG, yRectG, rectWidth4, rectHeight4);
+fill(255);
+}
+void stopText(){
+rect(xRectH, yRectH, rectWidth5, rectHeight5);
+fill(Black);
+textAlign(CENTER, CENTER);
+int size = 35;
+textFont(generalFont, size);
+text(Stop, xRectH, yRectH, rectWidth5, rectHeight5);
 fill(255);
 }

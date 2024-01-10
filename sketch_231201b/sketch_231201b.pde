@@ -21,6 +21,7 @@ float xRectD, yRectD;
 float xRectE, yRectE;
 float xRectF, yRectF, rectWidth4, rectHeight4;
 float xRectG, yRectG;
+float xRectH, yRectH, rectWidth5, rectHeight5;
 Minim minim;
 int numberOfSongs = 8; 
 int numberOfSounds = 4; 
@@ -30,7 +31,7 @@ AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs];
 AudioMetaData[] soundMetaData = new AudioMetaData[numberOfSounds];
 PFont generalFont;
 int currentSong = 0;
-Boolean stopBoolean= false, pauseBoolean=false;
+Boolean stopBoolean= false, pauseBoolean=false, changeState=false;
 //
 void setup() {
 fullScreen();
@@ -261,12 +262,16 @@ xRectF = xRectA*7/6;
 yRectF = yRectA*5/3;
 xRectG = xRectA*16/17;
 yRectG = yRectF;
+xRectH = xRectF*14/13;
+yRectH = yRectF*5/4;
 rectWidth2 = rectWidth1;
 rectHeight2 = appHeight*1/5;
 rectWidth3 = rectWidth*1/2;
 rectHeight3 = rectHeight*1/3;
 rectWidth4 = rectWidth*5/7;
 rectHeight4 = rectHeight3;
+rectWidth5 = rectWidth*1/3;
+rectHeight5 = rectHeight*1/2;
 //
 currentSong = int (random(0, numberOfSongs-1));
 println("Random Start", currentSong);
@@ -401,6 +406,16 @@ if (mouseX> xRectG && mouseX<xRectG+rectWidth4 && mouseY>yRectG && mouseY<yRectG
       currentSong--;
       song[currentSong].play();
       currentSongText();
+    }
+  }
+  if (mouseX> xRectH && mouseX<xRectH+rectWidth5 && mouseY>yRectH && mouseY<yRectH+rectHeight5) {
+    changeState=true;
+    if ( stopBoolean == false ) {
+      stopBoolean = true;
+      //playList[currentSong].pause(); //auto .rewind()
+    } else {
+      stopBoolean = false;
+      //playList[currentSong].rewind(); //Not Necessary
     }
   }
 }

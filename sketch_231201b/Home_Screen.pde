@@ -16,4 +16,5 @@ engineText();
 currentSongText();
 nextText();
 previousText();
+stopText();
 }
